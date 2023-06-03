@@ -1,0 +1,23 @@
+import time
+
+# 设置专注时长（分钟）
+focus_time = 65
+
+# 获取开始时间
+start_time = time.perf_counter()
+
+# 创建一个循环，直到专注时长结束
+while True:
+    # 获取当前时间
+    current_time = time.perf_counter()
+    # 计算已经过去的时间（秒）
+    elapsed_time = current_time - start_time
+    # 如果已经过去的时间大于或等于专注时长，退出循环
+    if elapsed_time >= focus_time * 60:
+        break
+    # 否则，暂停一秒
+    else:
+        time.sleep(1)
+
+# 打印结束信息
+print(f"您已经专注了{focus_time}分钟，休息一下吧！")
